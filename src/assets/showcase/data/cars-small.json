@@ -1,0 +1,10 @@
+{
+    "data": [
+    
+        {"brand": "VW", "startyear": 2012,"endyear": 2014, "color": "Orange", "vin": "dsad231ff"},
+        {"brand": "Audi","startyear": 2017,"endyear": 2018, "color": "Black", "vin": "gwregre345"},
+        {"brand": "Renault","startyear": 2017,"endyear": 2018, "color": "Gray", "vin": "h354htr"}
+    ]
+}
+
+
