@@ -46,4 +46,8 @@ export class CarService {
       .then(res => <Car[]>res.data)
       .then(data => { return data; });
   }
+  AddCar()
+  {
+    
+  }
 }

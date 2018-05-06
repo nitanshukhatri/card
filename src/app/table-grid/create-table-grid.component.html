@@ -1,0 +1,48 @@
+
+<h1 mat-dialog-title> ADD New Car</h1>
+<form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" [formGroup]="CarForm" (ngSubmit)="onSubmit()">
+
+    <mat-form-field>
+    <input type="text"  matInput placeholder="vin" formControlName="vin">
+    <mat-hint>Please enter a valid Vin.</mat-hint>
+    <mat-error>Invalid or missing Vin.</mat-error>
+    </mat-form-field>
+
+<mat-form-field>
+<input type="date"  matInput placeholder="startyear" formControlName="startyear">
+<mat-hint>Please enter a valid Vin.</mat-hint>
+<mat-error>Invalid or missing StartYear.</mat-error>
+</mat-form-field>
+
+<mat-form-field>
+    <input type="date"  matInput placeholder="endyear" formControlName="endyear">
+    <mat-hint>Please enter a valid endyear.</mat-hint>
+    <mat-error>Invalid or missing endyear.</mat-error>
+</mat-form-field>
+
+<mat-form-field>
+    <input type="text"  matInput placeholder="brand" formControlName="brand">
+    <mat-hint>Please enter a valid brand.</mat-hint>
+    <mat-error>Invalid or missing brand.</mat-error>
+</mat-form-field>
+
+<mat-form-field>
+    <input type="text"  matInput placeholder="color" formControlName="color">
+    <mat-hint>Please enter a valid color.</mat-hint>
+    <mat-error>Invalid or missing color.</mat-error>
+</mat-form-field>
+
+
+
+
+ <mat-dialog-actions> 
+    <button type="submit" mat-raised-button color="primary" [disabled]="CarForm.invalid">Submit</button>
+  
+    <button mat-button [mat-dialog-close]="false">Cancel</button>
+ </mat-dialog-actions>
+
+</form>
+
+
+
+
