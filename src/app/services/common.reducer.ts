@@ -1,5 +1,5 @@
 import { Car } from './carservice';
-import { CarActions, ADDCAR, REMOVECAR, SETCAR } from './common.action';
+import { CarActions, ADDCAR, REMOVECAR, SETCAR, UPDATECAR } from './common.action';
 import { Action, createFeatureSelector, createSelector } from '@ngrx/store';
 
 
@@ -16,12 +16,23 @@ export function commonReducer(state , action: CarActions) {
             ...state,
             cars: action.payload
           };
-          case SETCAR:
-          console.log('setcar')
+        case SETCAR:
+    
           return {
               ...state,
               cars: action.payload
             };
+        case UPDATECAR:
+            
+           let updatedstate = Object.assign({},state)
+           let Index        = updatedstate.cars.findIndex(car=>car.id === action.payload.id);
+           console.log(action.payload);
+           console.log(Index);
+           updatedstate.cars[Index] = action.payload;
+           console.log(updatedstate);
+           return updatedstate;
+            // cars: { ...state.cars.find(ex => ex.id === action.payload.id) }
+          
         default: {
             return state;
           }

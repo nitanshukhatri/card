@@ -1,7 +1,7 @@
 
 <h1 mat-dialog-title> ADD New Car</h1>
 <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" [formGroup]="CarForm" (ngSubmit)="onSubmit()">
-
+  <input type="hidden" formControlName ="id">
     <mat-form-field>
     <input type="text"  matInput placeholder="vin" formControlName="vin">
     <mat-hint>Please enter a valid Vin.</mat-hint>
@@ -9,13 +9,20 @@
     </mat-form-field>
 
 <mat-form-field>
-<input type="date"  matInput placeholder="startyear" formControlName="startyear">
-<mat-hint>Please enter a valid Vin.</mat-hint>
+<!-- <input type="date"  matInput placeholder="startyear" formControlName="startyear"> -->
+<input matInput [matDatepicker]="startyear" formControlName="startyear">
+<mat-datepicker-toggle matSuffix [for]="startyear"></mat-datepicker-toggle>
+<mat-datepicker #startyear></mat-datepicker>
+
+<mat-hint>Please enter a valid StartYear.</mat-hint>
 <mat-error>Invalid or missing StartYear.</mat-error>
 </mat-form-field>
 
 <mat-form-field>
-    <input type="date"  matInput placeholder="endyear" formControlName="endyear">
+    <!-- <input type="date"  matInput placeholder="endyear" formControlName="endyear"> -->
+    <input matInput [matDatepicker]="endyear" formControlName="endyear">
+    <mat-datepicker-toggle matSuffix [for]="endyear"></mat-datepicker-toggle>
+    <mat-datepicker #endyear></mat-datepicker>
     <mat-hint>Please enter a valid endyear.</mat-hint>
     <mat-error>Invalid or missing endyear.</mat-error>
 </mat-form-field>

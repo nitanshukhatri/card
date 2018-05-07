@@ -4,6 +4,7 @@ import { Action } from '@ngrx/store';
 export const ADDCAR = '[Car] Add Car';
 export const REMOVECAR = '[Car] Remove Car';
 export const SETCAR = '[Car] SET Car';
+export const UPDATECAR = '[Car] Update Car';
 
 export class AddCar implements Action {
     readonly type = ADDCAR;
@@ -13,6 +14,10 @@ export class RemoveCar implements Action {
     readonly type = REMOVECAR;
     constructor(public payload: any) {}
 }
+export class UpdateCar implements Action {
+    readonly type = UPDATECAR;
+    constructor(public payload: any) {}
+}
 export class SetCar implements Action {
     readonly type = SETCAR;
     constructor(public payload: any) {
@@ -20,4 +25,4 @@ export class SetCar implements Action {
     }
 }
 
-export type CarActions = AddCar | RemoveCar |SetCar;
+export type CarActions = AddCar | RemoveCar |SetCar |UpdateCar;
